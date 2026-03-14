@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <!-- 결과 띄우기 -->
+    <strong>   
+    <h1>
+        결과
+    </h1>
+    </strong>
+
+    <!-- 다시하기 버튼 생성 -->
+    <button type="button" onclick="regame();">다시하기</button>
+
+    <!-- 줄넘김 -->
+    <h5>
+    </h5>
+
+</body>
+<script>
+    
+    /// 결과 관련 변수 불러오기
+    const queryString = window.location.search;
+
+    const urlParams = new URLSearchParams(queryString);
+
+    const place_correct = urlParams.get('place_correct'); 
+    const place_incorrect = urlParams.get('place_incorrect');
+    const place_lost = urlParams.get('place_lost');   
+    const sound_correct = urlParams.get('sound_correct'); 
+    const sound_incorrect = urlParams.get('sound_incorrect'); 
+    const sound_lost = urlParams.get('sound_lost');      
+
+    /// 결과 출력하기
+    document.write("위치를 맞춘 횟수:",place_correct);
+    document.write("<br>위치를 틀린 횟수:",place_incorrect); 
+    document.write("<br>위치를 놓친 횟수:",place_lost);
+    document.write("<br>소리를 맞춘 횟수:",sound_correct); 
+    document.write("<br>소리를 틀린 횟수:",sound_incorrect); 
+    document.write("<br>소리를 놓친 횟수:",sound_lost);
+
+    /// 시작화면으로 돌아가기
+    const regame = () =>{
+        window.location.href = `main.html`;
+    }
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <!-- 이름 띄우기 -->
+    <strong>   
+    <h1>
+        N-back game
+    </h1>
+    </strong>
+
+    <!-- 시작 버튼 생성 -->
+    <button type="button" onclick="game_start();">start</button> 
+
+    <!-- N 바꾸는 버튼 생성 -->
+    <div>
+        <button type="button" onclick="n_1();">N = 1</button>
+        <button type="button" onclick="n_2();">N = 2</button>
+    </div>
+
+</body>
+
+<script>
+    /// N 변수 생성
+    var n = 1
+
+    /// N = 1
+    const n_1 = ()  => {
+        n = 1
+    }
+
+    /// M = 2
+    const n_2 = ()  => {
+        n = 2
+    }
+
+    ///게임 화면으로 넘어가기, N값 전송
+    const game_start = ()  => {
+        window.location.href = `index.html?n=${n}`;
+    }
+
+</script>
+
+</html>
